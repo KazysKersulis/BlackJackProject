@@ -30,7 +30,7 @@ public class Deck {
         }
     }
 
-    private void shuffle() {
+    public void shuffle() {
 
         Random rnd = new Random();
 
@@ -46,7 +46,7 @@ public class Deck {
         }
     }
 
-    private Card dealNextCard() {
+    public Card dealNextCard() {
 
         Card topCard = this.cards.get(0);
 
