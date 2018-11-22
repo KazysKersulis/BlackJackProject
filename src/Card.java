@@ -35,7 +35,7 @@ public class Card {
                 case 13: return "King of " + suit;
             }
         }
-        
+
         return "";
     }
 }

@@ -41,8 +41,8 @@ public class Deck {
             j = rnd.nextInt(this.numberOfCards);
 
             tmp = this.cards.get(i);
-            this.cards.add(i, this.cards.get(j));
-            this.cards.add(j, tmp);
+            this.cards.set(i, this.cards.get(j));
+            this.cards.set(j, tmp);
         }
     }
 
