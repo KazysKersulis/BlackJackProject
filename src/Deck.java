@@ -16,7 +16,7 @@ public class Deck {
 
         int index = 0;
 
-        for (int i = 0; i < this.numberOfCards; i++) {
+        for (int i = 0; i <= this.numberOfCards; i++) {
             for (int j = 0; j < 4; j++) {
                 for (int n = 0; n <= 13; n++) {
                     this.cards.add(index, new Card(Suit.values()[j], n));
@@ -47,6 +47,18 @@ public class Deck {
     }
 
     private Card dealNextCard() {
-        return this.cards.get(0);
+
+        Card topCard = this.cards.get(0);
+
+        this.cards.remove(0);
+
+        return topCard;
+    }
+
+    public void printDeck(int numberToPrint) {
+        for (int c = 0; c < numberToPrint; c++) {
+            System.out.printf("% 3d/%d %s\n", c+1, this.numberOfCards, this.cards.get(c).toString());
+        }
+        System.out.printf("\t\t[%d other]\n", this.numberOfCards - numberToPrint);
     }
 }

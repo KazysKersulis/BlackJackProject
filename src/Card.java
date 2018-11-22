@@ -8,11 +8,11 @@ public class Card {
 
     public Card(Suit suit, int number) throws Exception {
         this.suit = suit;
-        if (number >= 1 && number <= 13)
+        if (number >= 0 && number <= 13)
             this.number = number;
         else
-            throw new Exception("Invalid card number" + number);
-        
+            throw new Exception("Invalid card number " + number);
+
     }
 
     public int getNumber() {
@@ -21,9 +21,21 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "suit=" + suit +
-                ", number=" + number +
-                '}';
+
+        if (number > 0 && number <= 10) {
+            return "Card{" +
+                    "suit=" + suit +
+                    ", number=" + number +
+                    '}';
+        } else {
+            switch (number) {
+                case 0 : return "Ace of " + suit;
+                case 11: return "Jack of " + suit;
+                case 12: return "Queen of " + suit;
+                case 13: return "King of " + suit;
+            }
+        }
+        
+        return "";
     }
 }
