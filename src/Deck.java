@@ -18,7 +18,7 @@ public class Deck {
 
         for (int i = 0; i <= this.numberOfCards; i++) {
             for (int j = 0; j < 4; j++) {
-                for (int n = 0; n <= 13; n++) {
+                for (int n = 1; n <= 13; n++) {
                     this.cards.add(index, new Card(Suit.values()[j], n));
                     index++;
                 }

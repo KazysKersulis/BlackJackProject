@@ -22,14 +22,14 @@ public class Card {
     @Override
     public String toString() {
 
-        if (number > 0 && number <= 10) {
+        if (number > 1 && number <= 10) {
             return "Card{" +
                     "suit=" + suit +
                     ", number=" + number +
                     '}';
         } else {
             switch (number) {
-                case 0 : return "Ace of " + suit;
+                case 1 : return "Ace of " + suit;
                 case 11: return "Jack of " + suit;
                 case 12: return "Queen of " + suit;
                 case 13: return "King of " + suit;
